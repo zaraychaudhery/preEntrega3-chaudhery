@@ -1,46 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class ="products" id="productList"></div>
-    <div>
-        <button class="cart__openButton">Abrir Carrito</button>
-        </div>
-    <div id="cardSidebar" class="cart__sidebar">
-        <button class="cart__close">X</button>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Tienda</title>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Cursos de estética integral</h1>
 
-        <div class="cart__container">
-            <h2>Tu carrito</h2>
-            <div class="cart__items"></div>
-        </div>
-        <div class="cart__totalPrice">Total: $0</div>
-        </div>
-           <div>
-            <img class="product__image" src="${product.image}"alt="${product.title}"/>
-            </div>
-            <div>
-            <h5 class="product__title"> src="${(product.title)}</h5>
-            <p class="product__price">$${product.price.toFixed(2)}</p>
-            </div>  
-            <button class="product__add">Agregar</button>
-        <div class="cart__item">
-            <div class="cart__item-title">${(item.title)}</div>
-            <div> ${item.price}</div>
-            <div>
-            <button class="cart__increase">+</button>
-            <button class="cart__decrease">-</button>
-            <button class="cart__remove">eliminar</button>
-            </div>
-            </div> 
-            <div>product1</div>
-            <div>product2</div>
-        <script type="module" src="./js/app.js"></script>
-        <script type="module" src="./js/cart.js"></script>
-        <script type="module" src="./js/ui.js"></script>
-</body>
+			<div class="container-icon">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="icon-cart"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+					/>
+				</svg>
+				<div class="count-products">
+					<span id="contador-productos">0</span>
+				</div>
+
+				<div class="container-cart-products hidden-cart">
+					<div class="cart-product">
+						<div class="info-cart-product">
+                            <span class="cantidad-producto-carrito">1</span>
+                            <p class="titulo-producto-carrito">Curso Microblading</p>
+                            <span class="precio-producto-carrito">$300</span>
+                        </div>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="icon-close"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M6 18L18 6M6 6l12 12"
+							/>
+						</svg>
+					</div>
+                    <div class="cart-total">
+                        <h3>Total:</h3>
+                        <span class="total-pagar">$300</span>
+                    </div>
+				</div>
+			</div>
+		</header>
+		<div class="container-items">
+			<div class="item">
+				<figure>
+					<img
+						src="https://img.freepik.com/foto-gratis/hermosa-joven-atravesando-tratamiento-microblading_23-2149238664.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Curso Microblading</h2>
+					<p class="price">$300</p>
+					<button>Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://www.druni.es/blog/wp-content/uploads/2022/06/portada-4.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Curso Microlips</h2>
+					<p class="price">$300</p>
+					<button>Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://www.lolalash.cl/cdn/shop/articles/EXTENSION-DE-PESTANAS-DEBUT.jpg?v=1691594591"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Extensiones de Pestañas</h2>
+					<p class="price">$100</p>
+					<button>Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://clinicamassana.com/wp-content/uploads/2023/04/93599917_2633435246783870_1430423520604585984_n.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Visagismo y Diseño</h2>
+					<p class="price">$90</p>
+					<button>Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://st3.depositphotos.com/15237386/37176/i/450/depositphotos_371767702-stock-photo-master-brush-dye-henna-eyebrows.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Henna en Cejas</h2>
+					<p class="price">$90</p>
+					<button>Añadir al carrito</button>
+				</div>
+			</div>
+		</div>
+      
+        <script src="./js/app.js"></script>
+        <script src="./js/ui.js"></script>
+        <script src="./js/cart.js"></script>
+
+	</body>
 </html>
