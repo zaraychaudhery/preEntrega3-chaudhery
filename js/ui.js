@@ -1,28 +1,37 @@
-import {getCartItems} from "./cart.js";
+import { getCartItems } from "./cart.js"; 
+function showAlert(message) {
+    Swal.fire({
+        title: '¡Producto añadido!',
+        text: message,
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    });
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-    renderProducts();
-    updateCartUi();
+export function updateCartUI() {
+    const cartContainer = document.querySelector('.container-cart-products');
+    cartContainer.innerHTML = ''; 
+
+    const cartItems = getCartItems(); 
+
+    cartItems.forEach((item, index) => {
+        const cartProduct = document.createElement('div');
+        cartProduct.classList.add('cart-product');
+        cartProduct.innerHTML = `
+            <div class="info-cart-product">
+                <span class="cantidad-producto-carrito">${item.quantity}</span>
+                <p class="titulo-producto-carrito">${item.title}</p>
+                <span class="precio-producto-carrito">$${item.price}</span>
+                <button class="btn-remove" onclick="removeFromCart(${index}); updateCartUI();">Eliminar</button>
+            </div>
+            <svg class="icon-close" onclick="removeFromCart(${index})">
+                <path d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        `;
+        cartContainer.appendChild(cartProduct);
     });
 
-    const cartOpenButton = document.querySelector(".container-icon");
-    const cartSidebar = document.querySelector(".contador-productos");
-    const cartCloseButton =document.querySelector(".icon-close");
+    const totalElement = document.querySelector('.total-pagar');
+    totalElement.innerText = `$${getTotal()}`; }
+
     
-    cartOpenButton.addEventListener("click", ()=>{
-        cartSidebar.classList.add("count-products");
-    });
-    
-    cartCloseButton.addEventListener("click", ()=> {
-        cartSidebar.classList.remove("count-products");
-    }); 
-    document.getElementById("count-products").addEventListener("click", (event)=>{
-        if(event.target.classList.contains("container-cart-products hidden-cart")){
-            const card= event.target.closest(".count-products");
-            const productTitle = card.querySelector(".titulo-producto-carrito").innerText;
-            const productPrice = card.querySelector(".precio-producto-carrito").innerText;
-            const productId = card.getAttribute("data-id");
-            const product = createProduct(productId, productTitle, productPrice);
-    
-            addTocart(product,1);
-        } });

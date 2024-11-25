@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Curso Microblading",
+        "price": 300,
+        "image": "https://img.freepik.com/foto-gratis/hermosa-joven-atravesando-tratamiento-microblading_23-2149238664.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Curso Microlips",
+        "price": 300,
+        "image": "https://www.druni.es/blog/wp-content/uploads/2022/06/portada-4.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Extensiones de Pestañas",
+        "price": 100,
+        "image": "https://www.lolalash.cl/cdn/shop/articles/EXTENSION-DE-PESTANAS-DEBUT.jpg?v=1691594591"
+    },
+    {
+        "id": 4,
+        "title": "Visagismo y Diseño",
+        "price": 90,
+        "image": "https://clinicamassana.com/wp-content/uploads/2023/04/93599917_2633435246783870_1430423520604585984_n.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Henna en Cejas",
+        "price": 90,
+        "image": "https://st3.depositphotos.com/15237386/37176/i/450/depositphotos_371767702-stock-photo-master-brush-dye-henna-eyebrows.jpg"
+    }
+]
